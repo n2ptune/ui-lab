@@ -1,2 +1,93 @@
-/* reset css */
-@import url('https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css');
+.marquee {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.marquee-container {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  margin: 20px 0;
+}
+
+.cards {
+  width: var(--card-wrapper-width);
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: 10s;
+  display: flex;
+  opacity: 0;
+  transition: opacity 800ms ease;
+  height: 600px;
+}
+
+.cards > .card {
+  width: 300px;
+  height: 300px;
+  margin-left: 10px;
+  margin-right: 10px;
+  background-color: #ffc75f;
+  border-radius: 10px;
+  padding: 20px;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+  text-align: center;
+  color: #4b4453;
+  position: relative;
+}
+
+.cards > .card.darken {
+  color: #fbeaff;
+}
+
+.card.b {
+  background-color: #845ec2;
+}
+
+.card.c {
+  background-color: #d65db1;
+}
+
+.card.d {
+  background-color: #ff6f91;
+}
+
+.card.e {
+  background-color: #ff9671;
+}
+
+.card .title {
+  margin-top: 20px;
+  font-size: 1.2rem;
+}
+
+.card .content {
+  margin-top: 20px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 0 20px;
+  white-space: normal;
+  line-height: 1.25;
+}
+
+.card > img {
+  position: absolute;
+  bottom: 0;
+  width: 60px;
+  height: 60px;
+  border-radius: 9999px;
+  border: 5px solid white;
+  left: calc(50% - 30px);
+  bottom: 30px;
+}
+
+@keyframes slide-horizontal {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(var(--card-wrapper-real-width-x));
+  }
+}
