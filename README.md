@@ -6,3 +6,4 @@
 
 - [Confetti Effect (축하 폭죽 가루가 흩날리는 이펙트)](https://n2ptune.github.io/ui-lab/confetti-effect)
 - [Marquee Card Effect (가로로 흘러가는 카드 이펙트)](https://n2ptune.github.io/ui-lab/marquee-horizontal-lists)
+- [Bubble Effect (물방울 처럼 둥둥 떠다니는 이펙트)](https://n2ptune.github.io/ui-lab/bubble-effect)
