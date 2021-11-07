@@ -4,4 +4,4 @@
 
 ## Contents
 
-- [Confetti Effect (축하 폭죽 가루가 흩날리는 이펙트)](https://n2ptune.github.com/ui-lab/confetti-effect)
+- [Confetti Effect (축하 폭죽 가루가 흩날리는 이펙트)](https://n2ptune.github.io/ui-lab/confetti-effect)
