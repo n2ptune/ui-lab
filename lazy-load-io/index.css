@@ -1,0 +1,34 @@
+.text {
+  display: block;
+  margin: 2.5rem auto;
+  text-align: center;
+}
+
+.root {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 730px;
+}
+
+.root .item {
+  width: 200px;
+  height: 400px;
+  margin: 10px;
+  background-color: gray;
+  border-radius: 10px;
+}
+
+.root .item > img {
+  border-radius: 10px;
+  opacity: 0.1;
+  transition: opacity 500ms ease;
+  width: 200px;
+  height: 400px;
+  will-change: opacity;
+}
+
+.root .item > img.loaded {
+  opacity: 1;
+}
