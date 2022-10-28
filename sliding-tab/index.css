@@ -14,25 +14,36 @@
   box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
   display: flex;
   flex-wrap: nowrap;
+  position: relative;
+  z-index: 1;
 }
 
 .tabs .tab-item {
   padding: 10px 20px;
-  transition: 0.25s ease;
-  background-color: white;
+  transition: 0.45s ease;
+  background-color: transparent;
   border-radius: 20px;
+  z-index: 3;
+  cursor: pointer;
 }
 
 .tabs .tab-item:not(.active):hover {
   background-color: rgba(226, 226, 226, 0.4);
-  cursor: pointer;
 }
 
 .tabs .tab-item.active {
-  background-color: #1E90FF;
   color: white;
+  /* font-weight: bold; */
 }
 
 .tabs .tab-item:not(:first-child) {
   margin-left: 5px;
+}
+
+.active-tab {
+  position: absolute;
+  background-color: rgba(30, 144, 255, 1);
+  z-index: 2;
+  border-radius: 9999px;
+  transition: all 0.35s ease;
 }

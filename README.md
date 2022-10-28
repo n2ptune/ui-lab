@@ -8,3 +8,4 @@
 - [Marquee Card Effect (가로로 흘러가는 카드 이펙트)](https://n2ptune.github.io/ui-lab/marquee-horizontal-lists)
 - [Bubble Effect (물방울 처럼 둥둥 떠다니는 이펙트)](https://n2ptune.github.io/ui-lab/bubble-effect)
 - [Lazy Load (IntersectionObserver를 활용한 이미지 비동기 로딩)](https://n2ptune.github.io/ui-lab/lazy-load-io)
+- [Sliding Tab (탭 효과에 슬라이드 이펙트)](https://n2ptune.github.io/ui-lab/sliding-tab)
