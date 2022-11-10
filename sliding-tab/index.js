@@ -18,6 +18,13 @@ document.addEventListener('DOMContentLoaded', function() {
   tabItems.forEach(function(item) {
     item.addEventListener('click', tabClickEvent)
   })
-
-  tabItems[0].click()
 })
+
+const interval = setInterval(() => {
+  if (window.isStyleLoaded) {
+    const tabItems = document.querySelectorAll('.tabs .tab-item')
+    tabItems[0].click()
+    clearInterval(interval)
+    console.log('go!')
+  }
+}, 15)
