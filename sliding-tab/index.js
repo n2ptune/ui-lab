@@ -20,11 +20,18 @@ document.addEventListener('DOMContentLoaded', function() {
   })
 })
 
-const interval = setInterval(() => {
-  if (window.isStyleLoaded) {
+// const interval = setInterval(() => {
+//   if (window.isStyleLoaded) {
+//     const tabItems = document.querySelectorAll('.tabs .tab-item')
+//     tabItems[0].click()
+//     clearInterval(interval)
+//     console.log('go!')
+//   }
+// }, 15)
+
+document.addEventListener('readystatechange', () => {
+  if (document.readyState === 'complete') {
     const tabItems = document.querySelectorAll('.tabs .tab-item')
-    tabItems[0].click()
-    clearInterval(interval)
-    console.log('go!')
+    if (tabItems && tabItems.length) tabItems[0].click()
   }
-}, 15)
+})
