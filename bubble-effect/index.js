@@ -156,9 +156,4 @@ function imageLoad() {
   }
 }
 
-const descTitle = document.querySelector('.desc > .title')
-const descSub = document.querySelector('.desc > .sub')
-descTitle.classList.add('open')
-descSub.classList.add('open')
-
 const bubbles = new Bubbles(specs, document.querySelector('.bubbles'))
