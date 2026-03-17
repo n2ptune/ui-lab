@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apple Style Media Gallery</title>
+    <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="../common/reset.css" />
+    <link rel="stylesheet" href="../common/font.css" />
+  </head>
+  <body>
+    <div class="gallery">
+      <div class="gallery-container">
+        <div class="gallery-item">
+          <div class="gallery-content" style="background-image: url('https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=1200&q=80');">
+            <span class="gallery-title">Experience the Power</span>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-content" style="background-image: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80');">
+            <span class="gallery-title">Stunning Retina Display</span>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-content" style="background-image: url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1200&q=80');">
+            <span class="gallery-title">Next-Gen Connectivity</span>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-content" style="background-image: url('https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?auto=format&fit=crop&w=1200&q=80');">
+            <span class="gallery-title">Unmatched Battery Life</span>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-content" style="background-image: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=80');">
+            <span class="gallery-title">Pro Performance</span>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-controls">
+        <div class="gallery-nav-wrapper">
+          <div class="gallery-nav">
+            <button class="nav-dot" data-index="0"></button>
+            <button class="nav-dot" data-index="1"></button>
+            <button class="nav-dot" data-index="2"></button>
+            <button class="nav-dot" data-index="3"></button>
+            <button class="nav-dot" data-index="4"></button>
+          </div>
+        </div>
+        <button class="play-pause-btn" aria-label="Play/Pause">
+          <svg class="play-icon" viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M8 5.14v14l11-7-11-7z"/></svg>
+          <svg class="pause-icon" viewBox="0 0 24 24" width="16" height="16" style="display: none;"><path fill="currentColor" d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+        </button>
+      </div>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>
