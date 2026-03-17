@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI Lab | Handcrafted Interactions</title>
+    <link rel="stylesheet" href="./common/font.css">
+    <style>
+        :root {
+            --bg: #09090b;
+            --card-bg: rgba(24, 24, 27, 0.6);
+            --border: rgba(39, 39, 42, 0.8);
+            --text-primary: #f4f4f5;
+            --text-secondary: #a1a1aa;
+            --accent: #3b82f6;
+            --accent-glow: rgba(59, 130, 246, 0.2);
+        }
+
+        * {
+            box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-primary);
+            margin: 0;
+            padding: 80px 24px;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* 역동적인 배경 블러 애니메이션 */
+        body::before,
+        body::after {
+            content: '';
+            position: fixed;
+            top: -20%;
+            left: -10%;
+            width: 70vw;
+            height: 70vw;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+            z-index: -1;
+            filter: blur(80px);
+            opacity: 0.4;
+            animation: drift 20s infinite alternate ease-in-out;
+            pointer-events: none;
+        }
+
+        body::after {
+            top: auto;
+            bottom: -20%;
+            left: auto;
+            right: -10%;
+            width: 65vw;
+            height: 65vw;
+            background: radial-gradient(circle, rgba(236, 72, 153, 0.25) 0%, transparent 70%); /* 분홍색/푸시아 계열 */
+            animation: drift 25s infinite alternate-reverse ease-in-out;
+        }
+
+        @keyframes drift {
+            0% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(10%, 15%) scale(1.1); }
+            100% { transform: translate(-5%, 5%) scale(0.9); }
+        }
+
+        .container {
+            max-width: 1040px;
+            width: 100%;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        header {
+            margin-bottom: 64px;
+            text-align: left;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            margin: 0 0 12px 0;
+            background: linear-gradient(to bottom right, #fff 30%, #a1a1aa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+            max-width: 600px;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            margin-bottom: 24px;
+            font-weight: 600;
+        }
+
+        .table-wrapper {
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        th {
+            padding: 20px 24px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-bottom: 1px solid var(--border);
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        td {
+            padding: 24px;
+            font-size: 0.9375rem;
+            border-bottom: 1px solid var(--border);
+            transition: all 0.2s ease;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover td {
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            font-size: 1.1rem;
+        }
+
+        .feature-link {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 700; /* 조금 더 강조 */
+            display: inline-block;
+            position: relative;
+            transition: color 0.2s ease;
+        }
+
+        .feature-link:hover {
+            color: var(--accent);
+        }
+
+        .preview-icon {
+            font-size: 1.25rem;
+            opacity: 0.9;
+        }
+
+        .description {
+            color: #d4d4d8; /* 텍스트 밝기 상향 */
+            line-height: 1.6;
+            font-weight: 400; /* 폰트 두께 상향 */
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 40px 16px; }
+            h1 { font-size: 2.5rem; }
+            th:nth-child(3), td:nth-child(3) { display: none; }
+            td { padding: 16px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>UI Lab</h1>
+            <p class="subtitle">Handcrafted interactions and visual experiments exploring the boundaries of modern web interfaces.</p>
+        </header>
+        
+        <div class="section-title">
+            <span>🚀 Featured Projects</span>
+        </div>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 80px;">Status</th>
+                        <th style="width: 260px;">Interaction</th>
+                        <th style="width: 100px; text-align: center;">Preview</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="status-badge">✅</span></td>
+                        <td><a href="./gallery-carousel-like-apple/index.html" class="feature-link">Apple Style Carousel</a></td>
+                        <td style="text-align: center;"><span class="preview-icon">🍎</span></td>
+                        <td class="description">MacBook Pro 갤러리 특유의 매끄러운 스냅 스크롤과 지능형 컨트롤러 시스템 재현</td>
+                    </tr>
+                    <tr>
+                        <td><span class="status-badge">✅</span></td>
+                        <td><a href="./3d-card/index.html" class="feature-link">3D Card Hover</a></td>
+                        <td style="text-align: center;"><span class="preview-icon">💳</span></td>
+                        <td class="description">입체적인 원근감과 마우스를 추적하는 동적 블러 효과를 결합한 카드 인터랙션</td>
+                    </tr>
+                    <tr>
+                        <td><span class="status-badge">✅</span></td>
+                        <td><a href="./confetti-effect/index.html" class="feature-link">Confetti Effect</a></td>
+                        <td style="text-align: center;"><span class="preview-icon">🎉</span></td>
+                        <td class="description">Canvas API를 활용하여 하드웨어 가속 최적화를 적용한 경량 폭죽 애니메이션</td>
+                    </tr>
+                    <tr>
+                        <td><span class="status-badge">✅</span></td>
+                        <td><a href="./bubble-effect/index.html" class="feature-link">Bubble Noise Effect</a></td>
+                        <td style="text-align: center;"><span class="preview-icon">🫧</span></td>
+                        <td class="description">Perlin Noise 알고리즘 기반의 유기적인 모션 그래픽과 몽환적인 시각 효과</td>
+                    </tr>
+                    <tr>
+                        <td><span class="status-badge">✅</span></td>
+                        <td><a href="./sliding-tab/index.html" class="feature-link">Sliding Tab Navigation</a></td>
+                        <td style="text-align: center;"><span class="preview-icon">📏</span></td>
+                        <td class="description">포커스를 부드럽게 유지하며 이동하는 엘라스틱 모션 기반의 탭 인터페이스</td>
+                    </tr>
+                    <tr>
+                        <td><span class="status-badge">✅</span></td>
+                        <td><a href="./marquee-horizontal-lists/index.html" class="feature-link">Marquee Horizontal Lists</a></td>
+                        <td style="text-align: center;"><span class="preview-icon">⏩</span></td>
+                        <td class="description">대용량 리스트에서도 부드러움을 유지하는 무한 루프 수평 마키 시스템</td>
+                    </tr>
+                    <tr>
+                        <td><span class="status-badge">✅</span></td>
+                        <td><a href="./lazy-load-io/index.html" class="feature-link">Lazy Load Image (IO)</a></td>
+                        <td style="text-align: center;"><span class="preview-icon">🖼️</span></td>
+                        <td class="description">사용자 시점(Viewport)에 맞춰 데이터를 불러오는 효율적인 리소스 로딩 전략</td>
+                    </tr>
+                    <tr>
+                        <td><span class="status-badge">🛠️</span></td>
+                        <td><a href="./music-visualization/index.html" class="feature-link">Music Visualization</a></td>
+                        <td style="text-align: center;"><span class="preview-icon">🎵</span></td>
+                        <td class="description">Web Audio API를 통한 실시간 주파수 분석 및 기하학적 파형 시각화</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
