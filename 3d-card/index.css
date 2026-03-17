@@ -29,6 +29,7 @@ body {
   transition-duration: 300ms;
   transition-property: transform, box-shadow;
   box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  overflow: hidden; /* 블러 효과가 카드 밖으로 나가지 않도록 추가 */
 }
 
 .cards .card:hover {
@@ -44,8 +45,9 @@ body {
   opacity: 0.5;
   z-index: -1;
   position: absolute;
-  top: 50px;
-  left: 50px;
+  top: 0;
+  left: 0;
+  pointer-events: none; /* 마우스 이벤트를 방해하지 않도록 추가 */
 }
 
 .cards .card .card-header {
