@@ -169,7 +169,7 @@
         .feature-link {
             color: var(--text-primary);
             text-decoration: none;
-            font-weight: 700; /* 조금 더 강조 */
+            font-weight: 700;
             display: inline-block;
             position: relative;
             transition: color 0.2s ease;
@@ -179,21 +179,15 @@
             color: var(--accent);
         }
 
-        .preview-icon {
-            font-size: 1.25rem;
-            opacity: 0.9;
-        }
-
         .description {
-            color: #d4d4d8; /* 텍스트 밝기 상향 */
+            color: #d4d4d8;
             line-height: 1.6;
-            font-weight: 400; /* 폰트 두께 상향 */
+            font-weight: 400;
         }
 
         @media (max-width: 768px) {
             body { padding: 40px 16px; }
             h1 { font-size: 2.5rem; }
-            th:nth-child(3), td:nth-child(3) { display: none; }
             td { padding: 16px; }
         }
     </style>
@@ -215,7 +209,6 @@
                     <tr>
                         <th style="width: 80px;">Status</th>
                         <th style="width: 260px;">Interaction</th>
-                        <th style="width: 100px; text-align: center;">Preview</th>
                         <th>Description</th>
                     </tr>
                 </thead>
@@ -223,49 +216,41 @@
                     <tr>
                         <td><span class="status-badge">✅</span></td>
                         <td><a href="./gallery-carousel-like-apple/index.html" class="feature-link">Apple Style Carousel</a></td>
-                        <td style="text-align: center;"><span class="preview-icon">🍎</span></td>
                         <td class="description">MacBook Pro 갤러리 특유의 매끄러운 스냅 스크롤과 지능형 컨트롤러 시스템 재현</td>
                     </tr>
                     <tr>
                         <td><span class="status-badge">✅</span></td>
                         <td><a href="./3d-card/index.html" class="feature-link">3D Card Hover</a></td>
-                        <td style="text-align: center;"><span class="preview-icon">💳</span></td>
                         <td class="description">입체적인 원근감과 마우스를 추적하는 동적 블러 효과를 결합한 카드 인터랙션</td>
                     </tr>
                     <tr>
                         <td><span class="status-badge">✅</span></td>
                         <td><a href="./confetti-effect/index.html" class="feature-link">Confetti Effect</a></td>
-                        <td style="text-align: center;"><span class="preview-icon">🎉</span></td>
                         <td class="description">Canvas API를 활용하여 하드웨어 가속 최적화를 적용한 경량 폭죽 애니메이션</td>
                     </tr>
                     <tr>
                         <td><span class="status-badge">✅</span></td>
                         <td><a href="./bubble-effect/index.html" class="feature-link">Bubble Noise Effect</a></td>
-                        <td style="text-align: center;"><span class="preview-icon">🫧</span></td>
                         <td class="description">Perlin Noise 알고리즘 기반의 유기적인 모션 그래픽과 몽환적인 시각 효과</td>
                     </tr>
                     <tr>
                         <td><span class="status-badge">✅</span></td>
                         <td><a href="./sliding-tab/index.html" class="feature-link">Sliding Tab Navigation</a></td>
-                        <td style="text-align: center;"><span class="preview-icon">📏</span></td>
                         <td class="description">포커스를 부드럽게 유지하며 이동하는 엘라스틱 모션 기반의 탭 인터페이스</td>
                     </tr>
                     <tr>
                         <td><span class="status-badge">✅</span></td>
                         <td><a href="./marquee-horizontal-lists/index.html" class="feature-link">Marquee Horizontal Lists</a></td>
-                        <td style="text-align: center;"><span class="preview-icon">⏩</span></td>
                         <td class="description">대용량 리스트에서도 부드러움을 유지하는 무한 루프 수평 마키 시스템</td>
                     </tr>
                     <tr>
                         <td><span class="status-badge">✅</span></td>
                         <td><a href="./lazy-load-io/index.html" class="feature-link">Lazy Load Image (IO)</a></td>
-                        <td style="text-align: center;"><span class="preview-icon">🖼️</span></td>
                         <td class="description">사용자 시점(Viewport)에 맞춰 데이터를 불러오는 효율적인 리소스 로딩 전략</td>
                     </tr>
                     <tr>
                         <td><span class="status-badge">🛠️</span></td>
                         <td><a href="./music-visualization/index.html" class="feature-link">Music Visualization</a></td>
-                        <td style="text-align: center;"><span class="preview-icon">🎵</span></td>
                         <td class="description">Web Audio API를 통한 실시간 주파수 분석 및 기하학적 파형 시각화</td>
                     </tr>
                 </tbody>
